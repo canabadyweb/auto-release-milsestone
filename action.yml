@@ -1,0 +1,9 @@
+name: 'Docker based auto release in GitHub'
+description: 'Draft a auto release in GitHub based on a Milestone'
+author: 'Selva Canabady'
+outputs:
+    release-url:
+        description: 'The URL of the GitHub Release that was drafted'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'

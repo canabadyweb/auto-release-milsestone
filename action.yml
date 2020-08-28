@@ -1,9 +1,15 @@
 name: 'Docker based auto release in GitHub'
 description: 'Draft a auto release in GitHub based on a Milestone'
 author: 'Selva Canabady'
+inputs:
+    repo-token:
+        description: 'The GITHUB_TOKEN to auth the repo'
+        required: true
 outputs:
     release-url:
         description: 'The URL of the GitHub Release that was drafted'
 runs:
     using: 'docker'
     image: 'Dockerfile'
+    args:
+        - ${{ inputs.repo-token }}

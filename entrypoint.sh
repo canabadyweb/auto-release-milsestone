@@ -32,7 +32,7 @@ release_url=$(dotnet gitreleasemanager create \
 --repository "$repository")
 
 if [ $? -ne 0 ]; then
-  echo "::error::Failed to create the release draft"
+  echo "::error::Failed to create the release draft note"
   exit 1
 fi
 

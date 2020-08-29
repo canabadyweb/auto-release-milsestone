@@ -21,7 +21,7 @@ milestone_name=$(jq --raw-output .milestone.title "$GITHUB_EVENT_PATH")
 # Splits the string in $GITHUB_REPOSITORY which takes
 # the form "owner/repository" into two variables
 # called $owner and $repository
-IFS='/' read owner repository <<< "$GITHUB_REPOSITORY"
+IFS='/' read -r owner repository <<< "$GITHUB_REPOSITORY"
 
 release_url=$(dotnet gitreleasemanager create \
 --milestone "$milestone_name" \
